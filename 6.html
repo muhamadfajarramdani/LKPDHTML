@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background */
+        }
+        .container {
+            background-color: #ffffff; /* White background for the container */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+            padding: 40px;
+            max-width: 500px;
+            margin-top: 50px; /* Centering container vertically */
+        }
+        .btn-primary {
+            background-color: #4a90e2; /* Custom primary color */
+            border: none; /* Remove border */
+        }
+        .btn-primary:hover {
+            background-color: #357abd; /* Darker shade on hover */
+        }
+        .searching h5 {
+            color: #495057; /* Darker text color */
+        }
+        .searching span {
+            color: #4a90e2; /* Highlight color */
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group input {
+            border-radius: 6px 0 0 6px; /* Rounded corners for the input */
+        }
+        .input-group button {
+            border-radius: 0 6px 6px 0; /* Rounded corners for the button */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container d-flex flex-column align-items-center">
+        <div class="input-group mb-4">
+            <input class="form-control" type="date" name="date" id="hari">
+            <button class="btn btn-primary" id="tombol">Submit</button>
+        </div>
+        <div class="searching font-weight-bold">
+            <h5 id="hasil"></h5>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('tombol');
+        const date = document.getElementById('hari');
+        const result = document.getElementById('hasil');
+
+        btn.addEventListener('click', function(){
+            if(date.value) {
+                const dateObj = new Date(date.value);
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                const formattedDate = dateObj.toLocaleDateString('id-ID', options);
+
+                result.innerHTML = `Mencari data tanggal <span>${formattedDate}</span>`;
+            } else {
+                result.innerHTML = "Tidak mencari data...";
+            }
+        });
+    </script>
+</body>
+</html>

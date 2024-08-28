@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 70px;
+            height: 34px;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: skyblue;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0px 0px 1px skyblue;
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Lamp */
+        .slider2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+        }
+
+        .slider2:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 30px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+
+        .slider2.round {
+            border-radius: 34px;
+        }
+
+        .slider2.round:before {
+            border-radius: 50%;
+        }
+
+        .lamp:checked+.slider2 {
+            background-color: blue;
+        }
+
+        .lamp:focus+.slider2 {
+            box-shadow: 0px 0px 1px blue;
+        }
+
+        .lamp:checked+.slider2:before {
+            transform: translateX(-26px);
+        }
+    </style>
+</head>
+
+<body>
+        <h2>Button Toogle</h2>
+        <label class="switch" style="margin-left:30px">
+            <input class="lamp" type="checkbox">
+            <span class="slider2 round"></span>
+        </label>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+</body>
+
+</html>
