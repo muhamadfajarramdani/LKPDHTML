@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jejak Pendidikan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        #wrap{
+            display: block;
+        }
+        #wrap1, #wrap2 {
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="form-group">
+            <label for="jejak">Jejak Pendidikan</label>
+            <select value="" id="jejak" onchange="changeTingkat(this)">
+                <option value="">Pilih</option>
+                <option name="sd" value="Sd">SD</option>
+                <option name="smp" value="Smp">SMP</option>
+                <option name="sma" value="Sma">SMA</option>
+            </select>
+        </div>
+
+        <div id="wrap" class="form-group">
+            <label for="sd">Tingkat Sekolah SD</label>
+            <select name="sd" id="sd">
+                <option value="Sd">Kelas 1</option>
+                <option value="Sd">Kelas 2</option>
+                <option value="Sd">Kelas 3</option>
+                <option value="Sd">Kelas 4</option>
+                <option value="Sd">Kelas 5</option>
+                <option value="Sd">Kelas 6</option>
+            </select>
+        </div>
+
+        <div id="wrap1" class="form-group">
+            <label for="smp">Tingkat Sekolah SMP</label>
+            <select name="smp" id="smp">
+                <option value="Smp">Kelas 7</option>
+                <option value="Smp">Kelas 8</option>
+                <option value="Smp">Kelas 9</option>
+            </select>
+        </div>
+
+        <div id="wrap2" class="form-group">
+            <label for="sma">Tingkat Sekolah SMA</label>
+            <select name="sma" id="sma">
+                <option value="Sma">Kelas 10</option>
+                <option value="Sma">Kelas 11</option>
+                <option value="Sma">Kelas 12</option>
+            </select>
+        </div>
+    </form>
+
+    <script>
+        function changeTingkat(e) {
+            document.getElementById("wrap").style.display = "none";
+            document.getElementById("wrap1").style.display = "none";
+            document.getElementById("wrap2").style.display = "none";
+
+            if (e.value == "Sd") {
+                document.getElementById("wrap").style.display = "block";
+            } else if (e.value == "Smp") {
+                document.getElementById("wrap1").style.display = "block";
+            } else if (e.value == "Sma") {
+                document.getElementById("wrap2").style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

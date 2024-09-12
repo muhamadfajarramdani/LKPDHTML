@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style></style>
+<body>
+
+    <form action=""></form>
+    <label for="">Status ayah</label>
+    <div>
+        <label for="">Masih Hidup</label>
+        <input type="radio" name="tipe" id="" value="Ya" onclick="showHide(this)">
+    </div>
+    <div>
+        <label for="">Meninggal</label>
+        <input type="radio" name="tipe" id="" value="Tidak" onclick="showHide(this)">
+    </div>
+    <div>
+        <label for="">Tidak Diketahui</label>
+        <input type="radio" name="tipe" id="" value="gatau" onclick="showHide(this)">
+    </div>
+
+    <div id="sembunyi" class="sembunyi">
+
+
+        <label for="">Pendidikan ayah</label>
+        <select name="" id="">
+            <option value="">pilih</option>
+        </select>
+
+        <br>
+
+        <label for="">Pekerjaan ayah</label>
+        <select name="" id="">
+            <option value="">pilih</option>
+        </select>
+        <br>
+        <label for="">Pendidikan ayah</label>
+        <select name="" id="">
+            <option value="">pilih</option>
+        </select>
+        <br>
+        <label for="">Deskripsi Pekerjaan ayah</label>
+        <input type="text" name="" id="" placeholder="Tuliskan nama Spesifikasi Pekerjaan">
+        <br>
+        <label for="">Total Penghasilan ayah per bulan</label>
+        <input type="number" name="" id="">
+        <br>
+        <label for="" id="ganti">Detail ayah bekerja</label>
+        <input type="number" name="" id="">
+        <br>
+    </div>
+
+
+    <script>
+        function showHide(e) {
+            if (e.value == "Ya") {
+                document.getElementById("sembunyi");
+                document.getElementById("sembunyi").style.display = "block";
+            } else if (e.value == "Tidak") {
+                document.getElementById("ganti").innerText = "Detail Pekerjaan ayah semasa hidup";
+                document.getElementById("sembunyi").style.display = "block";
+            } else {
+                document.getElementById("sembunyi").style.display = "none";
+                document.getElementById("sembunyi");
+                
+            }
+        }
+    </script>
+
+</body>
+
+</html>
